@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MediaPlayer</string>
+    <string name="emptyMessage">No video files found</string>
+</resources>

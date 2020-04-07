@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/control_view_top"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="#B3000000"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/titleVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/white"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/control_view_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#B3000000"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/exo_replay"
+                android:layout_width="56dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                style="?borderlessButtonStyle"
+                app:srcCompat="@drawable/ic_replay" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@id/exo_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/white" />
+
+            <com.google.android.exoplayer2.ui.DefaultTimeBar
+                android:id="@id/exo_progress"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@id/exo_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/exo_fullscreen_icon"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="10dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_fullscreen_expand" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/rewind"
+        style="?borderlessButtonStyle"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="20dp"
+        android:layout_toStartOf="@+id/exo_btns_fl"
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/ic_rewind" />
+
+    <FrameLayout
+        android:id="@+id/exo_btns_fl"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/play_control_circle_background"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@id/exo_play"
+            android:layout_width="56dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            style="?borderlessButtonStyle"
+            app:srcCompat="@drawable/ic_play" />
+
+        <ImageButton
+            android:id="@id/exo_pause"
+            android:layout_width="56dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            style="?borderlessButtonStyle"
+            app:srcCompat="@drawable/ic_pause" />
+    </FrameLayout>
+
+
+    <ImageButton
+        android:id="@+id/forward"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/exo_btns_fl"
+        style="?borderlessButtonStyle"
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/ic_forward" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/volume_corner_radius"
+        android:orientation="vertical">
+
+        <com.vimal.mediaplayer.VerticalSeekBar
+            android:id="@+id/volumeSeekBar"
+            android:layout_width="40dp"
+            android:layout_height="120dp"
+            android:progressDrawable="@drawable/volume_bar_style"
+            android:thumb="@drawable/volume_bar_thump"
+            android:layout_gravity="center" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/volumeMuteButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/ic_volume_up" />
+
+    </LinearLayout>
+</RelativeLayout>
